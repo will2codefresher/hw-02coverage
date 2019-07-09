@@ -33,7 +33,7 @@ class LocaleUtilsTest extends Specification {
         result.getCountry() == country
     }
 
-    def "should throw IllegalArgumentException when str contain #"() {
+    def "should throw IllegalArgumentException when format is invalid"() {
         when:
         localeUtils.toLocale(str)
 
