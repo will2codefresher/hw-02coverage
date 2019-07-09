@@ -4,6 +4,8 @@ plugins {
     id 'application'
 
     id 'groovy'
+    id 'idea'
+    id 'jacoco'
 }
 
 repositories {
@@ -17,7 +19,24 @@ dependencies {
 
     testImplementation 'org.spockframework:spock-core:1.2-groovy-2.5'
     testImplementation 'junit:junit:4.12'
-	testCompile 'org.assertj:assertj-core:3.6.2'
+    testCompile 'org.assertj:assertj-core:3.6.2'
 }
+
+jacoco {
+    toolVersion '0.8.4'
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.95
+            }
+        }
+    }
+}
+
+test.finalizedBy jacocoTestReport, jacocoTestCoverageVerification
+
 
 mainClassName = 'com.coverage.App'
