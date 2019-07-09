@@ -56,12 +56,14 @@ class LocaleUtilsTest extends Specification {
         "Cn"         | "java.lang.IllegalArgumentException" | "Invalid locale format: Cn"
         "Chn"        | "java.lang.IllegalArgumentException" | "Invalid locale format: Chn"
         "chnn"       | "java.lang.IllegalArgumentException" | "Invalid locale format: chnn"
+
         "cn_hj"      | "java.lang.IllegalArgumentException" | "Invalid locale format: cn_hj"
         "cn_HJW"     | "java.lang.IllegalArgumentException" | "Invalid locale format: cn_HJW"
         "cn_12"      | "java.lang.IllegalArgumentException" | "Invalid locale format: cn_12"
         "cn_"        | "java.lang.IllegalArgumentException" | "Invalid locale format: cn_"
         "cn_ "       | "java.lang.IllegalArgumentException" | "Invalid locale format: cn_ "
         "c_HJ"       | "java.lang.IllegalArgumentException" | "Invalid locale format: c_HJ"
+
         "c_HJ_1234"  | "java.lang.IllegalArgumentException" | "Invalid locale format: c_HJ_1234"
         "c_HJ_"      | "java.lang.IllegalArgumentException" | "Invalid locale format: c_HJ_"
         " _HJ_12"    | "java.lang.IllegalArgumentException" | "Invalid locale format:  _HJ_12"
