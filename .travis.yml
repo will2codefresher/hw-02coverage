@@ -1,4 +1,4 @@
 language: java
 
 before_install:
-  - chomd +x ./gradlew
+  - chmod +x ./gradlew
