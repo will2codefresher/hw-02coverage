@@ -2,3 +2,10 @@ language: java
 
 before_install:
   - chmod +x ./gradlew
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+env:
+  global:
+    - CODECOV_TOKEN=febe45bb-5b20-44c2-b5c2-94ebdf5549dd
