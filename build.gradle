@@ -5,11 +5,10 @@ plugins {
 
     id 'groovy'
     id 'idea'
-    id 'jacoco'
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -22,28 +21,7 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.6.2'
 }
 
-jacoco {
-    toolVersion '0.8.4'
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
-    }
-}
-
-jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            limit {
-                minimum = 0.95
-            }
-        }
-    }
-}
-
-test.finalizedBy jacocoTestReport, jacocoTestCoverageVerification
+apply from: "$rootDir/gradle/scripts/coverage.gradle"
 
 
 mainClassName = 'com.coverage.App'
